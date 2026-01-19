@@ -1,2 +1,12 @@
 ##task.mdをignore
 doc/task.md
+
+## 環境変数ファイル
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+dev/backend/.env
+dev/frontend/.env.local
