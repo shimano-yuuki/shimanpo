@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine
+FROM golang:1.25-alpine
 
 WORKDIR /app
 
@@ -9,8 +9,5 @@ RUN go mod download
 # ソースコードのコピー
 COPY . .
 
-# ビルド
-RUN go build -o bin/server ./cmd/server
-
-# 実行
-CMD ["./bin/server"]
+# 開発環境では直接go runで実行（ホットリロード対応）
+CMD ["go", "run", "./cmd/server/main.go"]
